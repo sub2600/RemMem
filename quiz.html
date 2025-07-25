@@ -3,20 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Quiz Mode</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script>
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                window.location.href = 'index.html';
-            }
-        });
-    </script>
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
-<body>
-    <h1>Quiz Mode</h1>
-    <div class="tile-container">
-        <a href="index.html" class="tile">Exit to Homepage</a>
-    </div>
-    <!-- Quiz content goes here -->
+<body id="quizBody">
+    <div id="quizContainer"></div>
+    <script src="static/js/quiz.js"></script>
 </body>
 </html>

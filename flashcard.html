@@ -3,20 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Flashcard Mode</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script>
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                window.location.href = 'index.html';
-            }
-        });
-    </script>
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
-<body>
-    <h1>Flashcard Mode</h1>
-    <div class="tile-container">
-        <a href="index.html" class="tile">Exit to Homepage</a>
-    </div>
-    <!-- Flashcard content goes here -->
+<body id="flashcardBody">
+    <div id="flashcardContainer"></div>
+    <script src="static/js/flashcard.js"></script>
 </body>
 </html>

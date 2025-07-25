@@ -1,100 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Panel - Victorian Parliament Memory Tool</title>
-    <style>
-        body {
-            background-color: #0b1e3f;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-        h1 {
-            color: #ffffff;
-        }
-        .form-section {
-            background-color: #1c2e5a;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-        input[type="text"], input[type="file"] {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border-radius: 4px;
-            border: none;
-        }
-        button {
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: #2a4a8c;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .preview {
-            margin-top: 20px;
-        }
-        .preview img {
-            max-width: 200px;
-            border-radius: 8px;
-        }
-    </style>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
-<body>
-    <h1>Admin Panel</h1>
-    <div class="form-section">
-        <form id="memberForm">
-            <label for="imageUpload">Upload Member Image:</label>
-            <input type="file" id="imageUpload" accept="image/*">
-
-            <label for="name">Name:</label>
-            <input type="text" id="name" placeholder="Enter member name">
-
-            <label for="party">Party:</label>
-            <input type="text" id="party" placeholder="Enter party name">
-
-            <label for="electorate">Electorate:</label>
-            <input type="text" id="electorate" placeholder="Enter electorate">
-
-            <button type="button" onclick="previewMember()">Preview</button>
-        </form>
-    </div>
-
-    <div class="preview" id="previewArea">
-        <h2>Preview</h2>
-        <img id="previewImage" src="" alt="Member Image Preview">
-        <p id="previewText"></p>
-    </div>
-
-    <script>
-        function previewMember() {
-            const imageInput = document.getElementById('imageUpload');
-            const name = document.getElementById('name').value;
-            const party = document.getElementById('party').value;
-            const electorate = document.getElementById('electorate').value;
-
-            const previewImage = document.getElementById('previewImage');
-            const previewText = document.getElementById('previewText');
-
-            if (imageInput.files && imageInput.files[0]) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    previewImage.src = e.target.result;
-                };
-                reader.readAsDataURL(imageInput.files[0]);
-            }
-
-            previewText.innerHTML = `<strong>Name:</strong> ${name}<br><strong>Party:</strong> ${party}<br><strong>Electorate:</strong> ${electorate}`;
-        }
-    </script>
+<body class="admin">
+    <h2>Admin Panel</h2>
+    <form id="memberForm">
+        <input type="text" placeholder="Name" id="name" required>
+        <input type="text" placeholder="Electorate" id="electorate" required>
+        <input type="text" placeholder="Party" id="party" required>
+        <select id="house">
+            <option value="LA">LA</option>
+            <option value="LC">LC</option>
+        </select>
+        <input type="text" placeholder="Image URL" id="image" required>
+        <button type="submit">Save Member</button>
+    </form>
+    <div id="preview"></div>
+    <script src="static/js/admin.js"></script>
 </body>
 </html>
