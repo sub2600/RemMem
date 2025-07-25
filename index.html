@@ -6,29 +6,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Victorian Parliament Memory Tool</h1>
-        <div id="mode-selector">
-            <button onclick="startFlashcards()">Flashcard Mode</button>
-            <button onclick="startQuiz()">Quiz Mode</button>
-        </div>
-        <div id="flashcard" class="card hidden">
-            <img id="flashcard-image" src="" alt="Member Image">
-            <div id="flashcard-info"></div>
-            <button onclick="nextFlashcard()">Next</button>
-        </div>
-        <div id="quiz" class="card hidden">
-            <img id="quiz-image" src="" alt="Member Image">
-            <form id="quiz-form" onsubmit="return checkAnswer()">
-                <input type="text" id="name" placeholder="Name" required><br>
-                <input type="text" id="party" placeholder="Party" required><br>
-                <input type="text" id="electorate" placeholder="Electorate" required><br>
-                <button type="submit">Submit</button>
-            </form>
-            <div id="quiz-feedback"></div>
-            <button onclick="nextQuiz()">Next</button>
-        </div>
+    <h1>Victorian Parliament Memory Tool</h1>
+    <div class="tile-container">
+        <a href="flashcard.html" class="tile">Flashcard Mode</a>
+        <a href="quiz.html" class="tile">Quiz Mode</a>
+        <a href="admin.html" class="tile">Admin Section</a>
     </div>
-    <script src="js/app.js"></script>
 </body>
 </html>
